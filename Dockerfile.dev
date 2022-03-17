@@ -1,0 +1,10 @@
+FROM golang:1.18.0-alpine3.15
+ENV PATH="$PATH:/bin/bash"
+
+# FFMPEG
+RUN apk add --update bash curl make git zsh
+
+WORKDIR /go/src
+
+#vamos mudar para o endpoint correto. Usando top apenas para segurar o processo rodando
+ENTRYPOINT [ "top" ]

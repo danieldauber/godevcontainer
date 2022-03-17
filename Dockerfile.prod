@@ -1,0 +1,7 @@
+FROM golang:1.17-alpine
+
+COPY . .
+RUN rm go.mod
+RUN go build -o main src/main.go
+
+CMD ["./main"]
